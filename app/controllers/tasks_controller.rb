@@ -44,10 +44,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    
     @task.destroy
-    head :no_content
-    # redirect_to tasks_url, notice: "タスク「#{@task.name}」を削除しました。" => Ajax実装のために削除
   end
 
   def confirm_new
