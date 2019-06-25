@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_key, only: [:show, :edit, :update, :destroy]
   def index
     @q = current_user.tasks.ransack(params[:q])
-    @tasks = @q.result(distinct: true).page(params[:page]).per(5)
+    @tasks = @q.result(distinct: true).page(params[:page])
 
     respond_to do |format|
       format.html
